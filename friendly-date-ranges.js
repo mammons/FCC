@@ -25,12 +25,13 @@ function makeFriendlyDates(arr) {
     
     //convert months and days
     objDateArr.map(function(el){
-        return el.convertMonthAndDate();
+        return el.convertMonthAndDay();
     });
     
     //format the dates for display
     var convertedArray = convertDatesToString(objDateArr[0], objDateArr[1]);
     console.log(convertedArray);
+    return(convertedArray);
 }
 
 function myDate(year, month, day){
@@ -39,7 +40,7 @@ function myDate(year, month, day){
     this.day = day;
 }
 
-myDate.prototype.convertMonthAndDate = function(){
+myDate.prototype.convertMonthAndDay = function(){
     var months = {
         "01":"January",
         "02":"February",
@@ -84,7 +85,6 @@ function convertDatesToString(startDate, endDate){
             return [startStr, endDate.day];
         }
     }
-    console.log((endDate.realDate.getTime() - startDate.realDate.getTime())/(1000*60*60*24));
     if((endDate.realDate.getTime() - startDate.realDate.getTime())/(1000*60*60*24) < 365){
         //starting in current year
         if(startDate.year == "2016"){
