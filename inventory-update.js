@@ -1,3 +1,7 @@
+// Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities
+//  (in arr1). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by 
+//  item.
+
 function updateInventory(arr1, arr2) {
     // All inventory must be accounted for or you're fired!
     var inv = arr1;
@@ -13,7 +17,6 @@ function updateInventory(arr1, arr2) {
                 inv[j][0] += shipment[i][0];
                 console.log("new inventory: " + inv[j]);
                 break;
-                //continue;
             }
             else if(j == shipment.length-1){
                 console.log("no match. adding to end of inventory array");

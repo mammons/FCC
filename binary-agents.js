@@ -1,3 +1,7 @@
+// Return an English translated sentence of the passed binary string.
+
+// The binary string will be space separated.
+
 function binaryAgent(str) {
 
   var stringArray = str.split(" ");
